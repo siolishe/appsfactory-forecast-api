@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.3/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.3/system/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_AppsFactory WeatherForecast.-772920831.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="AppsFactory WeatherForecast.sln" t="IncludeFlat" />
+      <e p="Forecast.Api" t="IncludeRecursive">
+        <e p="Controllers" t="Include">
+          <e p="WeatherController.cs" t="Include" />
+        </e>
+        <e p="Forecast.Api.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Forecast.Api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Forecast.Data" t="IncludeRecursive">
+        <e p="Forecast.Data.csproj" t="IncludeRecursive" />
+        <e p="ForecastRepository.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Forecast.Data.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Forecast.Domain" t="IncludeRecursive">
+        <e p="Forecast.Domain.csproj" t="IncludeRecursive" />
+        <e p="Repositories" t="Include">
+          <e p="IForecastRepository.cs" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="IForecastClient.cs" t="Include" />
+          <e p="IForecastService.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Forecast.Domain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Forecast.Model" t="IncludeRecursive">
+        <e p="Forecast.Model.csproj" t="IncludeRecursive" />
+        <e p="Forecast.cs" t="Include" />
+        <e p="ServiceForecastModel.cs" t="Include" />
+        <e p="WeatherService.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Forecast.Model.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Forecast.Service" t="IncludeRecursive">
+        <e p="Forecast.Service.csproj" t="IncludeRecursive" />
+        <e p="ForecastClient.cs" t="Include" />
+        <e p="ForecastService.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Forecast.Service.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

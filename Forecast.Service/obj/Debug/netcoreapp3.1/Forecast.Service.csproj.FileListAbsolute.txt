@@ -1,0 +1,13 @@
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/bin/Debug/netcoreapp3.1/Forecast.Service.deps.json
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/bin/Debug/netcoreapp3.1/Forecast.Service.dll
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/bin/Debug/netcoreapp3.1/Forecast.Service.pdb
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/bin/Debug/netcoreapp3.1/Forecast.Domain.dll
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/bin/Debug/netcoreapp3.1/Forecast.Domain.pdb
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/obj/Debug/netcoreapp3.1/Forecast.Service.csprojAssemblyReference.cache
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/obj/Debug/netcoreapp3.1/Forecast.Service.AssemblyInfoInputs.cache
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/obj/Debug/netcoreapp3.1/Forecast.Service.AssemblyInfo.cs
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/obj/Debug/netcoreapp3.1/Forecast.Service.csproj.CopyComplete
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/obj/Debug/netcoreapp3.1/Forecast.Service.dll
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/obj/Debug/netcoreapp3.1/Forecast.Service.pdb
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/bin/Debug/netcoreapp3.1/Forecast.Model.dll
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Service/bin/Debug/netcoreapp3.1/Forecast.Model.pdb

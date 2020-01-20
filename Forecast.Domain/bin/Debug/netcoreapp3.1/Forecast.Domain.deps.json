@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Forecast.Domain/1.0.0": {
+        "dependencies": {
+          "Forecast.Model": "1.0.0"
+        },
+        "runtime": {
+          "Forecast.Domain.dll": {}
+        }
+      },
+      "Forecast.Model/1.0.0": {
+        "runtime": {
+          "Forecast.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Forecast.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Forecast.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

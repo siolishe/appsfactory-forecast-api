@@ -1,0 +1,8 @@
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Model/bin/Debug/netcoreapp3.1/Forecast.Model.deps.json
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Model/bin/Debug/netcoreapp3.1/Forecast.Model.dll
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Model/bin/Debug/netcoreapp3.1/Forecast.Model.pdb
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Model/obj/Debug/netcoreapp3.1/Forecast.Model.csprojAssemblyReference.cache
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Model/obj/Debug/netcoreapp3.1/Forecast.Model.AssemblyInfoInputs.cache
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Model/obj/Debug/netcoreapp3.1/Forecast.Model.AssemblyInfo.cs
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Model/obj/Debug/netcoreapp3.1/Forecast.Model.dll
+/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Model/obj/Debug/netcoreapp3.1/Forecast.Model.pdb

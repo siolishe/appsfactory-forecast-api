@@ -1,0 +1,55 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Domain/Forecast.Domain.csproj",
+    "projectName": "Forecast.Domain",
+    "projectPath": "/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Domain/Forecast.Domain.csproj",
+    "outputPath": "/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Domain/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp3.1"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {},
+      "https://nexus.indraproject.ir/repository/indra-dev-nuget-hosted/": {},
+      "https://nexus.indraproject.ir/repository/indra-dev-nuget/": {}
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "projectReferences": {
+          "/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Model/Forecast.Model.csproj": {
+            "projectPath": "/home/kasra/Repos/AppsFactory WeatherForecast/Forecast.Model/Forecast.Model.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp3.1": {
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true,
+      "frameworkReferences": {
+        "Microsoft.NETCore.App": {
+          "privateAssets": "all"
+        }
+      },
+      "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+    }
+  }
+}
