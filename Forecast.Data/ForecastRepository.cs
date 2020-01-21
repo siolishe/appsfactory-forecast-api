@@ -18,14 +18,14 @@ namespace Forecast.Data
             return Task.FromResult<IEnumerable<ServiceForecast>>(new List<ServiceForecast>());
         }
 
-        public Task<WeatherService> GetWeatherByName(string input)
+        public Task<WeatherService.CurrentWeather> GetWeatherByName(string input)
         {
-            return Task.FromResult(new WeatherService());
+            return Task.FromResult<WeatherService.CurrentWeather>(null);
         }
 
-        public Task<WeatherService> GetWeatherByZipCode(string input)
+        public Task<WeatherService.CurrentWeather> GetWeatherByZipCode(string input)
         {
-            return Task.FromResult(new WeatherService());
+            return Task.FromResult<WeatherService.CurrentWeather>(null);
         }
         
         public Task SaveAllForecast(IEnumerable<ServiceForecast> result)

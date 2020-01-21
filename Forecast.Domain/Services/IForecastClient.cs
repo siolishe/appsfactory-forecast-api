@@ -8,7 +8,7 @@ namespace Forecast.Domain.Services
     {
         Task<IEnumerable<ServiceForecast>> GetAllForecastByName(string input);
         Task<IEnumerable<ServiceForecast>> GetAllForecastByZipCode(string input);
-        Task<WeatherService> GetWeatherByName(string input);
-        Task<WeatherService> GetWeatherByZipCode(string input);
+        Task<WeatherService.CurrentWeather> GetWeatherByName(string input);
+        Task<WeatherService.CurrentWeather> GetWeatherByZipCode(string input);
     }
 }

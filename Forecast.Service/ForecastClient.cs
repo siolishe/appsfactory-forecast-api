@@ -61,7 +61,7 @@ namespace Forecast.Service
                 var responseType = typeof(T);
 
                 var result = responseType.IsGenericType
-                    ? JsonConvert.DeserializeObject<T>(JObject.Parse(responseString).Values().First().ToString())
+                    ? JsonConvert.DeserializeObject<T>(JObject.Parse(responseString).ToString())
                     : JsonConvert.DeserializeObject<T>(responseString);
 
                 return result;
@@ -93,18 +93,18 @@ namespace Forecast.Service
             return result;
         }
 
-        public async Task<WeatherService> GetWeatherByName(string input)
+        public async Task<WeatherService.CurrentWeather> GetWeatherByName(string input)
         {
             var url = $"https://api.openweathermap.org/data/2.5/weather?q={input}";
-            var result = await MakeApiCall<WeatherService>(new Uri(url),
+            var result = await MakeApiCall<WeatherService.CurrentWeather>(new Uri(url),
                 string.Empty);
             return result;
         }
 
-        public async Task<WeatherService> GetWeatherByZipCode(string input)
+        public async Task<WeatherService.CurrentWeather> GetWeatherByZipCode(string input)
         {
             var url = $"https://api.openweathermap.org/data/2.5/weather?zip={input}";
-            var result = await MakeApiCall<WeatherService>(new Uri(url),
+            var result = await MakeApiCall<WeatherService.CurrentWeather>(new Uri(url),
                 string.Empty);
             return result;
         }

@@ -48,7 +48,7 @@ namespace Forecast.Model
             public int sunset { get; set; }
         }
 
-        public class ServiceWeather
+        public class CurrentWeather
         {
             public Coord coord { get; set; }
             public IEnumerable<Weather> weather { get; set; }

@@ -21,7 +21,7 @@ namespace AppsFactory_WeatherForecast.Controllers
         }
 
         [HttpGet("forecast")]
-        public async Task<WeatherService> GetForecastByCityName([FromQuery] string city,
+        public async Task<WeatherService.CurrentWeather> GetForecastByCityName([FromQuery] string city,
             [FromQuery] string zipcode)
         {
             _logger.Log(LogLevel.Information, $"City = {city},Zipcode = {zipcode}");
@@ -38,7 +38,7 @@ namespace AppsFactory_WeatherForecast.Controllers
                 return result;
             }
 
-            return new WeatherService();
+            return new WeatherService.CurrentWeather();
         }
     }
 }

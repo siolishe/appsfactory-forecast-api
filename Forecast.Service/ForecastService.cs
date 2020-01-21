@@ -43,7 +43,7 @@ namespace Forecast.Service
             return result;
         }
 
-        public async Task<WeatherService> GetWeatherByName(string input)
+        public async Task<WeatherService.CurrentWeather> GetWeatherByName(string input)
         {
             var result = await _repository.GetWeatherByName(input);
             if (result == null)
@@ -55,7 +55,7 @@ namespace Forecast.Service
             return result;
         }
 
-        public async Task<WeatherService> GetWeatherByZipCode(string input)
+        public async Task<WeatherService.CurrentWeather> GetWeatherByZipCode(string input)
         {
             var result = await _repository.GetWeatherByZipCode(input);
             if (result is null)
