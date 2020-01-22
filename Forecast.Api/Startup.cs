@@ -33,7 +33,8 @@ namespace AppsFactory_WeatherForecast
                 option.SwaggerDoc("v1", new OpenApiInfo {Title = "Forecast API", Version = "v1"});
             });
             services.AddControllers();
-            services.AddAutoMapper(typeof(DtoMappingProfile));
+            services.AddAutoMapper();
+            Mapper.Initialize(x => x.AddProfile(typeof(DtoMappingProfile)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

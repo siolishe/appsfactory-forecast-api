@@ -24,7 +24,7 @@ namespace AppsFactory_WeatherForecast.Controllers
         }
 
         [HttpGet("forecast")]
-        public async Task<Weather> GetForecastByCityName([FromQuery] string city,
+        public async Task<Dto.Weather> GetForecastByCityName([FromQuery] string city,
             [FromQuery] string zipcode)
         {
             _logger.Log(LogLevel.Information, $"City = {city},Zipcode = {zipcode}");
@@ -32,18 +32,18 @@ namespace AppsFactory_WeatherForecast.Controllers
             if (!string.IsNullOrWhiteSpace(city))
             {
                 var response = await _service.GetWeatherByName(city);
-                var result = _mapper.Map<WeatherService.CurrentWeather, Weather>(response);
+                var result = _mapper.Map<WeatherService.CurrentWeather, Dto.Weather>(response);
                 return result;
             }
 
             if (!string.IsNullOrWhiteSpace(zipcode))
             {
                 var response = await _service.GetWeatherByZipCode(zipcode);
-                var result = _mapper.Map<WeatherService.CurrentWeather, Weather>(response);
+                var result = _mapper.Map<WeatherService.CurrentWeather, Dto.Weather>(response);
                 return result;
             }
 
-            return new Weather();
+            return new Dto.Weather();
         }
     }
 }
