@@ -77,18 +77,18 @@ namespace Forecast.Service
             }
         }
 
-        public async Task<IEnumerable<ServiceForecast>> GetAllForecastByName(string input)
+        public async Task<IEnumerable<Model.Forecast>> GetAllForecastByName(string input)
         {
             var url = $"https://api.openweathermap.org/data/2.5/forecast?q={input}";
-            var result = await MakeApiCall<List<ServiceForecast>>(new Uri(url),
+            var result = await MakeApiCall<List<Model.Forecast>>(new Uri(url),
                 string.Empty);
             return result;
         }
 
-        public async Task<IEnumerable<ServiceForecast>> GetAllForecastByZipCode(string input)
+        public async Task<IEnumerable<Model.Forecast>> GetAllForecastByZipCode(string input)
         {
             var url = $"https://api.openweathermap.org/data/2.5/forecast?q={input}";
-            var result = await MakeApiCall<List<ServiceForecast>>(new Uri(url),
+            var result = await MakeApiCall<List<Model.Forecast>>(new Uri(url),
                 string.Empty);
             return result;
         }

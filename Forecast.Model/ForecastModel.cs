@@ -57,7 +57,7 @@ namespace Forecast.Model
         public double ThreeHour { get; set; }
     }
 
-    public class ServiceForecast
+    public class Forecast
     {
         public int dt { get; set; }
         public Main main { get; set; }

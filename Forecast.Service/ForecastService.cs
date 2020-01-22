@@ -19,7 +19,7 @@ namespace Forecast.Service
             _repository = repository;
         }
 
-        public async Task<IEnumerable<ServiceForecast>> GetAllForecastByName(string input)
+        public async Task<IEnumerable<Model.Forecast>> GetAllForecastByName(string input)
         {
             var result = await _repository.GetAllForecastByName(input);
             if (!result.Any())
@@ -31,7 +31,7 @@ namespace Forecast.Service
             return result;
         }
 
-        public async Task<IEnumerable<ServiceForecast>> GetAllForecastByZipCode(string input)
+        public async Task<IEnumerable<Model.Forecast>> GetAllForecastByZipCode(string input)
         {
             var result = await _repository.GetAllForecastByZipCode(input);
             if (!result.Any())
