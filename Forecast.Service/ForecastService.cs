@@ -19,25 +19,28 @@ namespace Forecast.Service
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Model.Forecast>> GetAllForecastByName(string input)
+        public async Task<Model.Forecast> GetAllForecastByName(string input)
         {
             var result = await _repository.GetAllForecastByName(input);
-            if (!result.Any())
+            if (!(result is null))
             {
                 result = await _client.GetAllForecastByName(input);
-                await _repository.SaveAllForecast(result);
+                var list = result.list.GroupBy(x => x.dt_txt.Split(' ').First()).ToList();
+                result.list = list.Select(item => item.First()).ToList();
+                //result.list = list;
+                //await _repository.SaveAllForecast(result);
             }
 
             return result;
         }
 
-        public async Task<IEnumerable<Model.Forecast>> GetAllForecastByZipCode(string input)
+        public async Task<Model.Forecast> GetAllForecastByZipCode(string input)
         {
             var result = await _repository.GetAllForecastByZipCode(input);
-            if (!result.Any())
+            if (!(result is null))
             {
                 result = await _client.GetAllForecastByZipCode(input);
-                await _repository.SaveAllForecast(result);
+                //await _repository.SaveAllForecast(result);
             }
 
             return result;
@@ -62,6 +65,30 @@ namespace Forecast.Service
             {
                 result = await _client.GetWeatherByZipCode(input);
                 // await _repository.SaveAllForecast(result);
+            }
+
+            return result;
+        }
+
+        public async Task<Model.Forecast> GetChartDataByName(string city)
+        {
+            var result = await _repository.GetAllForecastByName(city);
+            if (!(result is null))
+            {
+                result = await _client.GetAllForecastByName(city);
+                //await _repository.SaveAllForecast(result);
+            }
+
+            return result;
+        }
+
+        public async Task<Model.Forecast> GetChartDataByZipCode(string zipcode)
+        {
+            var result = await _repository.GetAllForecastByName(zipcode);
+            if (!(result is null))
+            {
+                result = await _client.GetAllForecastByName(zipcode);
+                //await _repository.SaveAllForecast(result);
             }
 
             return result;

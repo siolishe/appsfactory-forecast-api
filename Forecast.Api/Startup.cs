@@ -22,6 +22,8 @@ namespace AppsFactory_WeatherForecast
 
         public IConfiguration Configuration { get; }
 
+        private const string SpecificOrigins = "_SpecificOrigins";
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -34,6 +36,11 @@ namespace AppsFactory_WeatherForecast
             });
             services.AddControllers();
             services.AddAutoMapper();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(SpecificOrigins,
+                    builder => { builder.WithOrigins("*"); });
+            });
             Mapper.Initialize(x => x.AddProfile(typeof(DtoMappingProfile)));
         }
 
@@ -50,6 +57,7 @@ namespace AppsFactory_WeatherForecast
             app.UseRouting();
 
             app.UseSwagger();
+            app.UseCors(SpecificOrigins);
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "AppsFactory_WeatherForecast.Forecast.Api");

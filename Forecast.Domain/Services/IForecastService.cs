@@ -6,9 +6,11 @@ namespace Forecast.Domain.Services
 {
     public interface IForecastService
     {
-        Task<IEnumerable<Model.Forecast>> GetAllForecastByName(string input);
-        Task<IEnumerable<Model.Forecast>> GetAllForecastByZipCode(string input);
-        Task<WeatherService.CurrentWeather> GetWeatherByName(string input);
-        Task<WeatherService.CurrentWeather> GetWeatherByZipCode(string input);
+        Task<Model.Forecast> GetAllForecastByName(string city);
+        Task<Model.Forecast> GetAllForecastByZipCode(string zipcode);
+        Task<WeatherService.CurrentWeather> GetWeatherByName(string city);
+        Task<WeatherService.CurrentWeather> GetWeatherByZipCode(string zipcode);
+        Task<Model.Forecast> GetChartDataByName(string city);
+        Task<Model.Forecast> GetChartDataByZipCode(string zipcode);
     }
 }

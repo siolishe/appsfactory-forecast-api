@@ -1,4 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
 using Forecast.Domain.Services;
 using Forecast.Model;
@@ -23,8 +26,8 @@ namespace AppsFactory_WeatherForecast.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("forecast")]
-        public async Task<Dto.Weather> GetForecastByCityName([FromQuery] string city,
+        [HttpGet("weather")]
+        public async Task<Dto.Weather> GetWeather([FromQuery] string city,
             [FromQuery] string zipcode)
         {
             _logger.Log(LogLevel.Information, $"City = {city},Zipcode = {zipcode}");
@@ -44,6 +47,52 @@ namespace AppsFactory_WeatherForecast.Controllers
             }
 
             return new Dto.Weather();
+        }
+
+        [HttpGet("forecast")]
+        public async Task<IEnumerable<Dto.Forecast>> Get5DaysForecast([FromQuery] string city,
+            [FromQuery] string zipcode)
+        {
+            _logger.Log(LogLevel.Information, $"City = {city},Zipcode = {zipcode}");
+
+            if (!string.IsNullOrWhiteSpace(city))
+            {
+                var response = await _service.GetAllForecastByName(city);
+                return response.list.Select(forecast =>
+                    _mapper.Map<List, Dto.Forecast>(forecast)).ToList();
+            }
+
+            if (!string.IsNullOrWhiteSpace(zipcode))
+            {
+                var response = await _service.GetAllForecastByZipCode(zipcode);
+                return response.list.Select(forecast =>
+                    _mapper.Map<List, Dto.Forecast>(forecast)).ToList();
+            }
+
+            return new List<Dto.Forecast>();
+        }
+
+        [HttpGet("forecastChart")]
+        public async Task<IEnumerable<Dto.ForecastChart>> GetForecastChart([FromQuery] string city,
+            [FromQuery] string zipcode)
+        {
+            _logger.Log(LogLevel.Information, $"City = {city},Zipcode = {zipcode}");
+
+            if (!string.IsNullOrWhiteSpace(city))
+            {
+                var response = await _service.GetChartDataByName(city);
+                return response.list.Select(forecast =>
+                    _mapper.Map<List, Dto.ForecastChart>(forecast)).ToList();
+            }
+
+            if (!string.IsNullOrWhiteSpace(zipcode))
+            {
+                var response = await _service.GetChartDataByZipCode(zipcode);
+                return response.list.Select(forecast =>
+                    _mapper.Map<List, Dto.ForecastChart>(forecast)).ToList();
+            }
+
+            return new List<Dto.ForecastChart>();
         }
     }
 }

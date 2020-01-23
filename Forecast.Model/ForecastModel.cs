@@ -2,23 +2,15 @@ using System.Collections.Generic;
 
 namespace Forecast.Model
 {
-    // public class ServiceForecast
-    // {
-    //     public string cod { get; set; }
-    //     public double message { get; set; }
-    //     public int cnt { get; set; }
-    //     public IEnumerable<List> list { get; set; }
-    //     public City city { get; set; }
-    // }
-
     public class Main
     {
         public double temp { get; set; }
+        public double feels_like { get; set; }
         public double temp_min { get; set; }
         public double temp_max { get; set; }
-        public double pressure { get; set; }
-        public double sea_level { get; set; }
-        public double grnd_level { get; set; }
+        public int pressure { get; set; }
+        public int sea_level { get; set; }
+        public int grnd_level { get; set; }
         public int humidity { get; set; }
         public double temp_kf { get; set; }
     }
@@ -39,7 +31,7 @@ namespace Forecast.Model
     public class Wind
     {
         public double speed { get; set; }
-        public double deg { get; set; }
+        public int deg { get; set; }
     }
 
     public class Sys
@@ -47,27 +39,15 @@ namespace Forecast.Model
         public string pod { get; set; }
     }
 
-    public class Rain
+    public class List
     {
-        public double ThreeHour { get; set; }
-    }
-
-    public class Snow
-    {
-        public double ThreeHour { get; set; }
-    }
-
-    public class Forecast
-    {
-        public int dt { get; set; }
+        public long dt { get; set; }
         public Main main { get; set; }
-        public IEnumerable<Weather> weather { get; set; }
+        public IList<Weather> weather { get; set; }
         public Clouds clouds { get; set; }
         public Wind wind { get; set; }
         public Sys sys { get; set; }
         public string dt_txt { get; set; }
-        public Rain rain { get; set; }
-        public Snow snow { get; set; }
     }
 
     public class Coord
@@ -82,5 +62,18 @@ namespace Forecast.Model
         public string name { get; set; }
         public Coord coord { get; set; }
         public string country { get; set; }
+        public int population { get; set; }
+        public int timezone { get; set; }
+        public int sunrise { get; set; }
+        public int sunset { get; set; }
+    }
+
+    public class Forecast
+    {
+        public string cod { get; set; }
+        public int message { get; set; }
+        public int cnt { get; set; }
+        public List<List> list { get; set; }
+        public City city { get; set; }
     }
 }

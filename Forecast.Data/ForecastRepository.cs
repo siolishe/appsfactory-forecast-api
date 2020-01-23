@@ -8,14 +8,14 @@ namespace Forecast.Data
 {
     public class ForecastRepository : IForecastRepository
     {
-        public Task<IEnumerable<Model.Forecast>> GetAllForecastByName(string input)
+        public Task<Model.Forecast> GetAllForecastByName(string input)
         {
-            return Task.FromResult<IEnumerable<Model.Forecast>>(new List<Model.Forecast>());
+            return Task.FromResult<Model.Forecast>(new Model.Forecast());
         }
 
-        public Task<IEnumerable<Model.Forecast>> GetAllForecastByZipCode(string input)
+        public Task<Model.Forecast> GetAllForecastByZipCode(string input)
         {
-            return Task.FromResult<IEnumerable<Model.Forecast>>(new List<Model.Forecast>());
+            return Task.FromResult<Model.Forecast>(new Model.Forecast());
         }
 
         public Task<WeatherService.CurrentWeather> GetWeatherByName(string input)
@@ -28,7 +28,7 @@ namespace Forecast.Data
             return Task.FromResult<WeatherService.CurrentWeather>(null);
         }
         
-        public Task SaveAllForecast(IEnumerable<Model.Forecast> result)
+        public Task SaveAllForecast(Model.Forecast result)
         {
             return new Task(null);
         }
