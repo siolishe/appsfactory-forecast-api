@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AppsFactory_WeatherForecast.Dto;
 using AutoMapper;
 using Forecast.Domain.Services;
 using Forecast.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Weather = AppsFactory_WeatherForecast.Dto.Weather;
 
 namespace AppsFactory_WeatherForecast.Controllers
 {
@@ -14,9 +15,9 @@ namespace AppsFactory_WeatherForecast.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private readonly IForecastService _service;
-        private readonly IMapper _mapper;
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IMapper _mapper;
+        private readonly IForecastService _service;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger, IForecastService service,
             IMapper mapper)
@@ -27,23 +28,23 @@ namespace AppsFactory_WeatherForecast.Controllers
         }
 
         [HttpGet("weather")]
-        public async Task<Dto.Weather> GetWeather([FromQuery] string input)
+        public async Task<Weather> GetWeather([FromQuery] string input)
         {
             _logger.Log(LogLevel.Information, $"Input = {input}");
 
             if (string.IsNullOrWhiteSpace(input))
-                return new Dto.Weather();
+                return new Weather();
 
             if (int.TryParse(input, out var zipcode))
             {
                 var response = await _service.GetWeatherByZipCode(zipcode.ToString());
-                var result = _mapper.Map<WeatherService.CurrentWeather, Dto.Weather>(response);
+                var result = _mapper.Map<WeatherService.CurrentWeather, Weather>(response);
                 return result;
             }
             else
             {
                 var response = await _service.GetWeatherByName(input);
-                var result = _mapper.Map<WeatherService.CurrentWeather, Dto.Weather>(response);
+                var result = _mapper.Map<WeatherService.CurrentWeather, Weather>(response);
                 return result;
             }
         }
@@ -58,37 +59,37 @@ namespace AppsFactory_WeatherForecast.Controllers
 
             if (int.TryParse(input, out var zipcode))
             {
-                var response = await _service.GetAllForecastByName(zipcode.ToString());
+                var response = await _service.GetAllForecastByZipCode(zipcode.ToString());
                 return response.list.Select(forecast =>
                     _mapper.Map<List, Dto.Forecast>(forecast)).ToList();
             }
             else
             {
-                var response = await _service.GetAllForecastByZipCode(input);
+                var response = await _service.GetAllForecastByName(input);
                 return response.list.Select(forecast =>
                     _mapper.Map<List, Dto.Forecast>(forecast)).ToList();
             }
         }
 
         [HttpGet("forecastChart")]
-        public async Task<IEnumerable<Dto.ForecastChart>> GetForecastChart([FromQuery] string input)
+        public async Task<IEnumerable<ForecastChart>> GetForecastChart([FromQuery] string input)
         {
             _logger.Log(LogLevel.Information, $"Input = {input}");
 
             if (string.IsNullOrWhiteSpace(input))
-                return new List<Dto.ForecastChart>();
+                return new List<ForecastChart>();
 
             if (int.TryParse(input, out var zipcode))
             {
                 var response = await _service.GetChartDataByName(zipcode.ToString());
                 return response.list.Select(forecast =>
-                    _mapper.Map<List, Dto.ForecastChart>(forecast)).ToList();
+                    _mapper.Map<List, ForecastChart>(forecast)).ToList();
             }
             else
             {
-                var response = await _service.GetChartDataByZipCode(input);
+                var response = await _service.GetChartDataByName(input);
                 return response.list.Select(forecast =>
-                    _mapper.Map<List, Dto.ForecastChart>(forecast)).ToList();
+                    _mapper.Map<List, ForecastChart>(forecast)).ToList();
             }
         }
     }

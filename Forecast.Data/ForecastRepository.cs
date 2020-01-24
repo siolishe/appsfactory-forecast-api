@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Forecast.Domain.Repositories;
 using Forecast.Model;
 
@@ -10,12 +8,12 @@ namespace Forecast.Data
     {
         public Task<Model.Forecast> GetAllForecastByName(string input)
         {
-            return Task.FromResult<Model.Forecast>(new Model.Forecast());
+            return Task.FromResult(new Model.Forecast());
         }
 
         public Task<Model.Forecast> GetAllForecastByZipCode(string input)
         {
-            return Task.FromResult<Model.Forecast>(new Model.Forecast());
+            return Task.FromResult(new Model.Forecast());
         }
 
         public Task<WeatherService.CurrentWeather> GetWeatherByName(string input)
@@ -27,7 +25,7 @@ namespace Forecast.Data
         {
             return Task.FromResult<WeatherService.CurrentWeather>(null);
         }
-        
+
         public Task SaveAllForecast(Model.Forecast result)
         {
             return new Task(null);
