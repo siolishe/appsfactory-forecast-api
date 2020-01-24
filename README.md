@@ -1,4 +1,4 @@
-# AppsFactory Weather Forecast
+# AppsFactory Weather Forecast Api
 
 AppsFactory Weather Forecast is a task that is given to me to work on it.
 ## Installation
