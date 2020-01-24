@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Linq;
 using AppsFactory_WeatherForecast.Dto;
 using AutoMapper;
@@ -17,8 +18,8 @@ namespace AppsFactory_WeatherForecast.Helper
                 .ForMember(d => d.CityName, opt => opt.MapFrom(s => s.name))
                 .ForMember(d => d.MaxTemp, opt => opt.MapFrom(s => s.main.temp_max))
                 .ForMember(d => d.MinTemp, opt => opt.MapFrom(s => s.main.temp_min))
-                .ForMember(d => d.WindSpeed, opt => opt.MapFrom(s => s.wind.speed.ToString()))
-                .ForMember(d => d.WindSpeed, opt => opt.MapFrom(s => s.wind.speed.ToString()))
+                .ForMember(d => d.WindSpeed, opt => opt.MapFrom(s => s.wind.speed.ToString(CultureInfo.InvariantCulture)))
+                .ForMember(d => d.WindSpeed, opt => opt.MapFrom(s => s.wind.speed.ToString(CultureInfo.InvariantCulture)))
                 .ForAllOtherMembers(opt => opt.Ignore());
 
             CreateMap<List, Dto.Forecast>()
@@ -30,7 +31,9 @@ namespace AppsFactory_WeatherForecast.Helper
 
             CreateMap<List, ForecastChart>()
                 .ForMember(d => d.MinTemp, opt => opt.MapFrom(s => s.main.temp_min))
-                .ForMember(d => d.Time, opt => opt.MapFrom(s => DateTimeOffset.FromUnixTimeSeconds(s.dt).TimeOfDay));
+                .ForMember(d => d.MaxTemp, opt => opt.MapFrom(s => s.main.temp_max))
+                .ForMember(d => d.Time,
+                    opt => opt.MapFrom(s => DateTimeOffset.FromUnixTimeSeconds(s.dt).ToString("g")));
         }
     }
 }

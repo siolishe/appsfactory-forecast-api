@@ -40,6 +40,8 @@ namespace Forecast.Service
             if (!(result is null))
             {
                 result = await _client.GetAllForecastByZipCode(input);
+                var list = result.list.GroupBy(x => x.dt_txt.Split(' ').First()).ToList();
+                result.list = list.Select(item => item.First()).ToList();
                 //await _repository.SaveAllForecast(result);
             }
 

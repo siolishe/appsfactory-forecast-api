@@ -4,5 +4,6 @@ namespace AppsFactory_WeatherForecast.Dto
     {
         public string Time { get; set; }
         public int MinTemp { get; set; }
+        public int MaxTemp { get; set; }
     }
 }

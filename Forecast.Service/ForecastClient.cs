@@ -20,7 +20,7 @@ namespace Forecast.Service
             try
             {
                 var request = (HttpWebRequest) WebRequest.Create(string.Concat(endpoint.OriginalString,
-                    "&apikey=fcadd28326c90c3262054e0e6ca599cd"));
+                    "&units=metric&apikey=fcadd28326c90c3262054e0e6ca599cd"));
                 request.ContentType = "application/json";
                 request.Method = method;
                 request.Timeout = requestTimeOut;
