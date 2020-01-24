@@ -10,6 +10,7 @@ $ cd ~/appsfactory-forecast-api/Forecast.Api
 $ dotnet restore
 $ dotnet run
 ```
+A swagger can be find at ```/index.html```
 
 ## Specifications
 
